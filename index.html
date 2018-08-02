@@ -6,11 +6,82 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <script src="src/js/main.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="./src/css/style.css" />
+    <link rel="stylesheet " href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css " integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO " crossorigin="anonymous ">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+
 </head>
 
 <body>
+
+    <header class="navbar navbar-expand-lg navbar-light bg-primary-trello ">
+        <div class="col-md-2 col-12 padding-none">
+            <div class=" mr-sm-2 icon-box">
+                <i class="fab fa-trello"></i>
+                <span>Tablero</span>
+            </div>
+
+        </div>
+
+        <div class="col-md-3 col-12  padding-none">
+            <form class="form-inline my-2 my-lg-0 ">
+                <input class=" mr-sm-2 icon-box" type="search " aria-label="Search ">
+                <i class="fas fa-search text-light"></i>
+            </form>
+        </div>
+        <div class="col-3 col-md-3 padding-none">
+            <div class=" mr-sm-2"><img class="logo" src="./assets/img/trello-logo-white.svg" width="90"></div>
+        </div>
+        <div class="col-12 col-md-4 text-right ">
+            <div class="icon-box icon-box-min">
+                <i class="fas fa-plus"></i>
+            </div>
+            <div class="icon-box icon-box-min">
+                <i class="far fa-question-circle"></i>
+            </div>
+            <div class="icon-box bg-danger icon-box-min">
+                <i class="far fa-bell"></i>
+            </div>
+            <div class="user icon-box-min">
+                <img src="./assets/img/cara.jpeg">
+            </div>
+        </div>
+    </header>
+    <nav class="navbar">
+        <div class="row --white menu">
+            <a class="nav-item nav-link active" href="#">Trello
+                <i class="far fa-star"></i>
+                <span class="sr-only">(current)</span>
+            </a>
+            <a class="nav-item nav-link" href="#">Personal</a>
+            <a class="nav-item nav-link" href="#">
+                <i class="fas fa-lock"></i> Privado </a>
+            <div class="user icon-box-min">
+                <img src="./assets/img/cara.jpeg">
+            </div>
+            <span class="nav-item icon-box icon-box-min-rounded" href="#">
+                    <i class=" nav-item fas fa-user-plus "></i>
+                </span>
+
+        </div>
+    </nav>
+    <section class="container-fluid">
+        <div class="row">
+            <div class="col-3" id="ListContainer">
+            </div>
+            <div class="col-3" id="ListContainerTwo">
+            </div>
+        </div>
+
+
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js " integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo " crossorigin="anonymous "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js " integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49 " crossorigin="anonymous "></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js " integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy " crossorigin="anonymous "></script>
+    <script src="src/js/main.js "></script>
+    <script src="src/js/data.js "></script>
+    <script src="src/js/controler.js "></script>
 
 </body>
 

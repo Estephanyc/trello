@@ -1,0 +1,105 @@
+body {
+    background-color: #3b8dc2!important;
+}
+
+header {
+    padding-top: .4rem;
+    padding: .4rem;
+}
+
+.bg-primary-trello {
+    background-color: #296aa7
+}
+
+.navbar {
+    padding: .2rem 1rem !important;
+}
+
+.icon-box {
+    color: #fff;
+    background-color: hsla(0, 0%, 100%, .3);
+    border-radius: 3px;
+    border: none;
+    height: 32px;
+    padding-top: 5px;
+    margin: 0;
+    min-height: 32px;
+    padding-right: 10px;
+    padding-left: 10px;
+    line-height: 19px;
+}
+
+.icon-box-min {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.icon-box-min-rounded {
+    float: left;
+    border-radius: 100px;
+    margin-left: 10px;
+}
+
+.search span {
+    color: #fff;
+    padding-left: 5px;
+    font-size: 18px;
+}
+
+.logo {
+    opacity: 0.4;
+}
+
+.padding-none {
+    padding: 0px !important
+}
+
+.user img {
+    width: 30px;
+    border: 2px solid #fff;
+    border-radius: 100px;
+}
+
+.menu {
+    padding-top: 10px
+}
+
+.menu a {
+    color: #ffffff;
+    padding: .6rem;
+    font-size: 14px;
+    display: inline-block;
+}
+
+.menu a::after {
+    content: "|";
+    padding-left: 8px;
+    color: #9ccded
+}
+
+.addInput {
+    color: #fff;
+    background-color: hsla(0, 0%, 0%, .1);
+    border-radius: 3px;
+    border: none;
+    margin-top: 10px;
+    height: 40px;
+    padding-top: 5px;
+    min-height: 32px;
+    padding-right: 10px;
+    padding-left: 10px;
+    line-height: 30px;
+    cursor: pointer
+}
+
+.boxList {
+    background-color: #e2e4e6;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.boxList button {
+    background-color: #59ac44;
+    border: none;
+    margin: 10px;
+}
