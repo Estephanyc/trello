@@ -95,11 +95,31 @@ header {
 .boxList {
     background-color: #e2e4e6;
     padding: 10px;
-    border-radius: 5px;
+    border-radius: 3px;
 }
 
 .boxList button {
     background-color: #59ac44;
     border: none;
     margin: 10px;
+}
+
+.boxList h5 {
+    font-size: 1rem;
+    padding: 5px;
+    font-weight: bold;
+}
+
+.boxList p {
+    font-size: .9rem;
+}
+
+.boxList span {
+    color: #888787;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 3px;
+    padding: .4rem
 }
