@@ -116,6 +116,7 @@ header {
 
 .boxList span {
     color: #888787;
+    cursor: pointer
 }
 
 .card {

@@ -1,7 +1,4 @@
-window.onload = () =>{
-    //input inicial
-    createAddTaskInicial()
-}
+// boton inicial de crear lista
 createAddTaskInicial = () =>{
     const container = document.getElementById("ListContainer");
     const addText = document.createTextNode("+ Añadir una lista")
@@ -9,17 +6,12 @@ createAddTaskInicial = () =>{
     parrafo.appendChild(addText)
     container.appendChild(parrafo)
     parrafo.classList.add("addInput");
-
-    parrafo.addEventListener("click", function () {
-        clearContainer()
-        addListContainer('ListContainer')
-    });
+    parrafo.setAttribute("id", "addListInicial");  
 }
 
-addListContainer = (idContainer) =>{
-
+// input para crear nueva lista
+createAddListInput = (idContainer) =>{
     const container = document.getElementById(idContainer);
-
     const newDiv = document.createElement("div");
     newDiv.classList.add("boxList");
     container.appendChild(newDiv)
@@ -27,35 +19,27 @@ addListContainer = (idContainer) =>{
 
     const newInput = document.createElement("input");
     newInput.classList.add("form-control");
+    newInput.setAttribute("id", "inputAddNewList");
 
     const newButtom = document.createElement("button");
     const textButton = 'Añadir lista'
     const textButtonNode = document.createTextNode(textButton)
     newButtom.classList.add("btn","btn-primary", "mb-2");
+    newButtom.setAttribute("id", "buttonAddNewList"); 
 
     const trash = document.createElement("i");
     trash.classList.add("fas", "fa-times");
+    trash.setAttribute("id", "trashAddListInput"); 
 
     newButtom.appendChild(textButtonNode)
     newDiv.appendChild(newInput);
     newDiv.appendChild(newButtom);
     newDiv.appendChild(trash);
     container.appendChild(newDiv)
-
-    trash.addEventListener("click", () => {
-        container.removeChild(newDiv);
-        createAddTaskInicial()
-    });
-    newButtom.addEventListener("click", () => {
-       let nameList = newInput.value;
-        addNewList(nameList)
-    }); 
 }
-
+// crear la nueva lista
 addNewList =(name)=>{
-
-    clearContainer()
-    addListContainer('ListContainerTwo')
+    createAddListInput('ListContainerTwo')
     const container = document.getElementById("ListContainer");
     const newDiv = document.createElement("div");
     newDiv.classList.add("boxList");
@@ -71,40 +55,36 @@ addNewList =(name)=>{
     newDiv.appendChild(listTittle);
     container.appendChild(newDiv)
     newDiv.appendChild(cardsContainer)
-    addCardButton()
 }
+// boton para agregar nuevas targetas en la lista
 addCardButton = ()=>{
     let container = document.getElementById('boxListId')
     const addCardText = document.createTextNode("+ Añadir targeta")
     const addCard = document.createElement("span");
     addCard.appendChild(addCardText)
     container.appendChild(addCard)
-    addCard.setAttribute("id", "addCardButtonID");
-
-    addCard.addEventListener("click", function () {
-
-        container.removeChild(addCardButtonID);
-
-        const newInput = document.createElement("input");
-        newInput.classList.add("form-control");
-        newInput.setAttribute('placeholder','Introduzca un titulo para esta targeta')
-
-        const newButtom = document.createElement("button");
-        newButtom.classList.add("btn", "btn-primary", "mb-2");
-        const textButton = 'Añadir lista'
-        const textButtonNode = document.createTextNode(textButton)
-
-        newButtom.appendChild(textButtonNode)
-        container.appendChild(newInput);
-        container.appendChild(newButtom);
-
-        newButtom.addEventListener("click", () => {
-            let nameCard = newInput.value;
-            createCard(nameCard)
-            newInput.value =''
-        }); 
-    });
+    addCard.setAttribute("id", "addCardID");
 }
+// input para crear el nombre de la targeta
+createCardInput = () =>{
+    let container = document.getElementById('boxListId')
+    const newInput = document.createElement("input");
+    newInput.classList.add("form-control");
+    newInput.setAttribute('placeholder', 'Introduzca un titulo para esta targeta')
+    newInput.setAttribute("id", "inputAddNewCard");
+
+    const newButtom = document.createElement("button");
+    newButtom.classList.add("btn", "btn-primary", "mb-2");
+    newButtom.setAttribute("id", "addCardButtonId");
+
+    const textButton = 'Añadir lista'
+    const textButtonNode = document.createTextNode(textButton)
+
+    newButtom.appendChild(textButtonNode)
+    container.appendChild(newInput);
+    container.appendChild(newButtom);
+}
+// crear la targeta
 createCard = (name) =>{
     
     let container = document.getElementById('cardsContainer')
