@@ -31,13 +31,13 @@ header {
 
 .icon-box-min {
     display: inline-block;
-    margin-left: 10px;
 }
 
 .icon-box-min-rounded {
     float: left;
     border-radius: 100px;
     margin-left: 10px;
+    font-size: 10px;
 }
 
 .search span {
@@ -123,4 +123,13 @@ header {
     background-color: #fff;
     border-radius: 3px;
     padding: .4rem
+}
+
+.card:hover {
+    background-color: #f1f1f1
+}
+
+.tableros {
+    font-size: .9rem;
+    font-weight: bold;
 }

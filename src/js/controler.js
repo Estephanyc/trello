@@ -1,20 +1,22 @@
 // crear el boton inicial de agregar lista
-let containerOne = 'ListContainer2'
-let containerTwo = 'ListContainer3'
+let containerOne = 'ListContainer1'
+let containerTwo = 'ListContainer2'
 columnList(containerOne)
 
+// crear boton inicial para agregar lista
 createAddTaskInicial()
 
 document.getElementById('addListInicial').addEventListener("click", function () {
-   
+
     clearContainer()
 
     //crear input para agregar lista
     createAddListInput(containerOne)
-  
-    buttonAddNewList.addEventListener("click", () => {
-        let nameList = inputAddNewList.value;
 
+    buttonAddNewList.addEventListener("click", () => {
+        
+        let nameList = inputAddNewList.value;
+        
         // limpiar el contenedor para que entre la lista
         clearContainer()
 
@@ -22,10 +24,14 @@ document.getElementById('addListInicial').addEventListener("click", function () 
         createAddListInput(containerTwo)
 
         // agregar nueva lista
-        addNewList(nameList)
+        let list = createObjectList(nameList)
+        addNewList(list.name)
 
         // boton para agregar targetas dentro de la lista
         addCardButton()
+
+        // contador de targetas
+        let cardsCounter = 0
 
         // cuando se da click en el boton agregar targeta
         addCardID.addEventListener("click", function () {
@@ -37,9 +43,14 @@ document.getElementById('addListInicial').addEventListener("click", function () 
             createCardInput()
 
             addCardButtonId.addEventListener("click", function () {
+
                 let nameCard = inputAddNewCard.value;
-                createCard(nameCard)
+                let cardInObjectList = createCardInObjectList(list,cardsCounter,nameCard)
+                
+                // crear la targeta en el dom pasandole como el objeto de lista
+                createCard(cardInObjectList.cards[cardsCounter])
                 inputAddNewCard.value = ''
+                cardsCounter++
             })
         })
     });  

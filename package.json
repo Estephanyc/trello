@@ -1,11 +1,30 @@
 {
   "name": "trello",
   "version": "0.0.1",
-  "description": "Trello - manipulacion de tareas",
+  "description": "trello",
   "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "chai-dom": "^1.8.0",
+    "jsdom": "^11.12.0",
+    "jsdom-global": "^3.0.2"
+  },
+  "devDependencies": {
+    "mocha": "^5.2.0"
+  },
   "scripts": {
     "test": "mocha"
   },
-  "author": "Estephany carvajal hernandez",
-  "license": "ISC"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Estephanyc/trello.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Estephanyc/trello/issues"
+  },
+  "homepage": "https://github.com/Estephanyc/trello#readme"
 }

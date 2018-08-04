@@ -9,6 +9,8 @@ columnList = (idContainer) =>{
         container.appendChild(parrafo)
         parrafo.classList.add("addInput");
         parrafo.setAttribute("id", "addListInicial");  
+
+        return container
     }
 
     // input para crear nueva lista
