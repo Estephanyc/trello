@@ -31,11 +31,6 @@ document.getElementById('addListInicial').addEventListener('click', function() {
     // contador de targetas
     let cardsCounter = 0;
 
-    trashAddListInput.addEventListener('click', function() {
-      clearContainer(containerTwo);
-      createAddTaskInicial(containerTwo);
-    });
-
     // cuando se da click en el boton agregar targeta
     addCardID.addEventListener('click', function() {
       // eliminar el boton de agregar targeta
