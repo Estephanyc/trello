@@ -70,7 +70,7 @@ columnList = (idContainer) =>{
   // input para crear el nombre de la targeta
   createCardInput = () =>{
     let container = document.getElementById('boxListId');
-    const newInput = document.createElement('input');
+    const newInput = document.createElement('textarea');
     newInput.classList.add('form-control');
     newInput.setAttribute('placeholder', 'Introduzca un titulo para esta targeta');
     newInput.setAttribute('id', 'inputAddNewCard');

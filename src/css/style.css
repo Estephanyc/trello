@@ -193,6 +193,10 @@ header {
     padding: 5px;
 }
 
+#inputAddNewCard {
+    font-size: .9rem;
+}
+
 @media (max-width: 1200px) {
     .tableros {
         display: none;
