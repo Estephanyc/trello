@@ -61,12 +61,13 @@ header {
 }
 
 .menu {
-    padding-top: 10px
+    padding-top: 10px;
+    padding-left: 10px
 }
 
 .menu a {
     color: #ffffff;
-    padding: .6rem;
+    padding: .4rem;
     font-size: 14px;
     display: inline-block;
 }
@@ -135,6 +136,24 @@ header {
     font-weight: bold;
 }
 
+.center {
+    text-align: center;
+}
+
+.white {
+    color: #fff
+}
+
+.tittle {
+    font-weight: bold;
+    font-size: 1rem !important;
+}
+
+.icon-min {
+    padding-left: 10px;
+    font-size: .7rem;
+}
+
 @media (max-width: 1200px) {
     .tableros {
         display: none;
@@ -145,8 +164,4 @@ header {
     .inputSearch {
         display: none;
     }
-}
-
-.white {
-    color: #fff
 }
