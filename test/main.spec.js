@@ -6,7 +6,7 @@ var chai = require('chai')
 
 chai.use(require('chai-dom'))
 
-console.log(dom.window.document.querySelector("p").textContent); // "Hello world"
+//console.log(dom.window.document.querySelector("p").textContent); // "Hello world"
 
 //dom.window.document.querySelector("p").should.contain.html('Hello world')
 //expect(dom.querySelector('#title')).to.contain.html('<em>Tea</em>')
