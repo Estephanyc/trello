@@ -62,8 +62,8 @@ columnList = (idContainer) =>{
     // boton para agregar nuevas targetas en la lista
     addCardButton = ()=>{
         let container = document.getElementById('boxListId')
-        const addCardText = document.createTextNode("+ Añadir targeta")
-        const addCard = document.createElement("span");
+        const addCardText = document.createTextNode("+ Añada una targeta")
+        const addCard = document.createElement("p");
         addCard.appendChild(addCardText)
         container.appendChild(addCard)
         addCard.setAttribute("id", "addCardID");

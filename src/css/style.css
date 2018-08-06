@@ -109,7 +109,7 @@ header {
 .boxList {
     background-color: #e2e4e6;
     padding: 10px;
-    border-radius: 3px;
+    border-radius: 4px;
     margin-bottom: 10px;
 }
 
@@ -132,6 +132,19 @@ header {
 .boxList span {
     color: #888787;
     cursor: pointer
+}
+
+#addCardID {
+    padding: 10px;
+    margin: 0!important;
+    color: #8f8f8f
+}
+
+#addCardID:hover {
+    background: #d0d0d0;
+    text-decoration: underline;
+    color: #404040;
+    cursor: pointer;
 }
 
 .card {
@@ -165,6 +178,20 @@ header {
 .icon-min {
     padding-left: 10px;
     font-size: .7rem;
+}
+
+.puntos {
+    font-size: 1.2rem;
+    float: right;
+    font-weight: bold;
+    color: #7c7676;
+}
+
+.listTittle {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #403f3f;
+    padding: 5px;
 }
 
 @media (max-width: 1200px) {
