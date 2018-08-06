@@ -1,8 +1,8 @@
 // boton inicial de crear lista
 columnList = (idContainer) =>{
 
-    createAddTaskInicial = () =>{
-        const container = document.getElementById(idContainer);
+    createAddTaskInicial = (containerTaskInicial) =>{
+        const container = document.getElementById(containerTaskInicial);
         const addText = document.createTextNode("+ Añadir una lista")
         const parrafo = document.createElement("p");
         parrafo.appendChild(addText)
@@ -97,34 +97,7 @@ columnList = (idContainer) =>{
         cardTittle.appendChild(cardText)
         container.appendChild(cardTittle)
     }
-    clearContainer = ()  => {
+    clearContainer = (idContainer)  => {
         document.getElementById(idContainer).innerHTML = '';
     }
-    /* createOtherAddListInput = (id)=>{
-        const container = document.getElementById(id);
-        const newDiv = document.createElement("div");
-        newDiv.classList.add("boxList");
-        container.appendChild(newDiv)
-        newDiv.classList.add("boxList");
-
-        const newInput = document.createElement("input");
-        newInput.classList.add("form-control");
-        newInput.setAttribute("id", "inputAddNewList");
-
-        const newButtom = document.createElement("button");
-        const textButton = 'Añadir lista'
-        const textButtonNode = document.createTextNode(textButton)
-        newButtom.classList.add("btn", "btn-primary", "mb-2");
-        newButtom.setAttribute("id", "buttonAddNewList");
-
-        const trash = document.createElement("i");
-        trash.classList.add("fas", "fa-times");
-        trash.setAttribute("id", "trashAddListInput");
-
-        newButtom.appendChild(textButtonNode)
-        newDiv.appendChild(newInput);
-        newDiv.appendChild(newButtom);
-        newDiv.appendChild(trash);
-        container.appendChild(newDiv)
-    } */
 }

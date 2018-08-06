@@ -96,6 +96,7 @@ header {
     background-color: #e2e4e6;
     padding: 10px;
     border-radius: 3px;
+    margin-bottom: 10px;
 }
 
 .boxList button {
@@ -132,4 +133,20 @@ header {
 .tableros {
     font-size: .9rem;
     font-weight: bold;
+}
+
+@media (max-width: 1200px) {
+    .tableros {
+        display: none;
+    }
+    .icon-box {
+        width: 40px
+    }
+    .inputSearch {
+        display: none;
+    }
+}
+
+.white {
+    color: #fff
 }

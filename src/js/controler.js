@@ -4,11 +4,11 @@ let containerTwo = 'ListContainer2'
 columnList(containerOne)
 
 // crear boton inicial para agregar lista
-createAddTaskInicial()
+createAddTaskInicial(containerOne)
 
 document.getElementById('addListInicial').addEventListener("click", function () {
 
-    clearContainer()
+    clearContainer(containerOne)
 
     //crear input para agregar lista
     createAddListInput(containerOne)
@@ -18,7 +18,7 @@ document.getElementById('addListInicial').addEventListener("click", function () 
         let nameList = inputAddNewList.value;
         
         // limpiar el contenedor para que entre la lista
-        clearContainer()
+        clearContainer(containerOne)
 
         // poner el input de agregar nueva lista en la segunda columna
         createAddListInput(containerTwo)
@@ -33,6 +33,11 @@ document.getElementById('addListInicial').addEventListener("click", function () 
         // contador de targetas
         let cardsCounter = 0
 
+        trashAddListInput.addEventListener("click", function () {
+            clearContainer(containerTwo)
+            createAddTaskInicial(containerTwo)
+        })
+
         // cuando se da click en el boton agregar targeta
         addCardID.addEventListener("click", function () {
 
@@ -40,7 +45,7 @@ document.getElementById('addListInicial').addEventListener("click", function () 
             boxListId.removeChild(addCardID)
 
             // input para crear la nueva targeta
-            createCardInput()
+            createCardInput(containerOne)
 
             addCardButtonId.addEventListener("click", function () {
 
