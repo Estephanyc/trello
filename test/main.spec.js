@@ -1,10 +1,10 @@
 const jsdom = require("jsdom");
 const { JSDOM } = jsdom;
-const document = new JSDOM(`<!DOCTYPE html><p>Hello world</p>`);
+global.document = new JSDOM(`<!DOCTYPE html><p>Hello world</p>`);
 
-//var chai = require('chai')
+var chai = require('chai')
 
-//chai.use(require('chai-dom'))
+chai.use(require('chai-dom'))
 
 //console.log(dom.window.document.querySelector("p").textContent); // "Hello world"
 
