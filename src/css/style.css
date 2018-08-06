@@ -81,6 +81,10 @@ header {
     display: inline-block;
 }
 
+.menu a:hover {
+    color: #ffffff;
+}
+
 .menu a::after {
     content: "|";
     padding-left: 8px;
