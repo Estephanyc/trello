@@ -78,7 +78,7 @@ addNewList = (list,container)=>{
   contain.appendChild(newDiv);
   newDiv.appendChild(cardsContainer);
 
-  const addCardText = document.createTextNode('+ Añada una targeta');
+  const addCardText = document.createTextNode('+ Añada una tarjeta');
   const addCard = document.createElement('p');
 
   addCard.appendChild(addCardText);
@@ -96,7 +96,7 @@ createCardInput = (list, container, addCard) =>{
   contain.removeChild(addCard);
   const newInput = document.createElement('textarea');
   newInput.classList.add('form-control');
-  newInput.setAttribute('placeholder', 'Introduzca un titulo para esta targeta');
+  newInput.setAttribute('placeholder', 'Introduzca un titulo para esta tarjeta');
   let inputId = 'input' + container
   newInput.setAttribute('id', inputId);
 
@@ -106,7 +106,7 @@ createCardInput = (list, container, addCard) =>{
   newButtom.onclick = () => {
     controlerCreateCard(list, container);
   };
-  const textButton = 'Añadir targeta';
+  const textButton = 'Añadir tarjeta';
   const textButtonNode = document.createTextNode(textButton);
 
   newButtom.appendChild(textButtonNode);
