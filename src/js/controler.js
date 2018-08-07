@@ -1,12 +1,7 @@
 // crear boton inicial para agregar lista
 createAddTaskInicial();
 
-controlerAddListInput = (idContainer) => {
-  createAddListInput(idContainer);
-}
-
 controlerCreateNewList = (container) => {
-  
   let name = inputAddNewList.value;
   let list = createObjectList(name);
   addNewList(list,container);

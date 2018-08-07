@@ -18,7 +18,7 @@ createAddTaskInicial = (containerTaskInicial) =>{
   newDivList.appendChild(parrafo);
   parrafo.classList.add('addInput');
   parrafo.onclick = () => {
-    controlerAddListInput(newId);
+    createAddListInput(newId);
   }; 
   return container;
 };
@@ -32,8 +32,6 @@ createAddListInput = (Container) =>{
   newDiv.classList.add('boxList');
   container.appendChild(newDiv);
   newDiv.classList.add('boxList');
-
-  let formId = 'form' + Container
 
   const newInput = document.createElement('input');
   newInput.classList.add('form-control');
@@ -55,10 +53,9 @@ createAddListInput = (Container) =>{
   trash.setAttribute('id', trashId); 
 
   newButtom.appendChild(textButtonNode);
-  newDiv.appendChild(newDivForm)
-  newDivForm.appendChild(newInput);
-  newDivForm.appendChild(newButtom);
-  newDiv.appendChild(trash);
+  newDiv.appendChild(newInput);
+  newDiv.appendChild(newButtom);
+  //newDiv.appendChild(trash);
   container.appendChild(newDiv);
 };
 // crear la nueva lista
@@ -70,7 +67,7 @@ addNewList = (list,container)=>{
   let newId = 'box' + counter;
   newDiv.setAttribute('id', newId);
   const cardsContainer = document.createElement('div');
-  let cardsContainerId = 'cards' + container
+  let cardsContainerId = 'cards' + newId
   cardsContainer.setAttribute('id', cardsContainerId);
 
   const listTittle = document.createElement('h5');
@@ -83,20 +80,20 @@ addNewList = (list,container)=>{
 
   const addCardText = document.createTextNode('+ Añada una targeta');
   const addCard = document.createElement('p');
+
   addCard.appendChild(addCardText);
   newDiv.appendChild(addCard);
   let addCardId = 'addCardId' + container
   addCard.setAttribute('id', addCardId);
   addCard.onclick = ()=>{
     console.log(list);
-    createCardInput(list, newId);
+    createCardInput(list, newId, addCard);
   };
 };
 // input para crear el nombre de la targeta
-createCardInput = (list, container) =>{
-  //container.removeChild('addCardID' + container);
+createCardInput = (list, container, addCard) =>{
   const contain = document.getElementById(container)
-  console.log(container)
+  contain.removeChild(addCard);
   const newInput = document.createElement('textarea');
   newInput.classList.add('form-control');
   newInput.setAttribute('placeholder', 'Introduzca un titulo para esta targeta');
@@ -120,7 +117,7 @@ createCardInput = (list, container) =>{
 createCard = (name,container) =>{
   
   cardsCounter++;
-  let contain  = document.getElementById(container);
+  let contain  = document.getElementById('cards' + container);
   const cardText = document.createTextNode(name);
   const cardTittle = document.createElement('p');
   cardTittle.classList.add('card');
