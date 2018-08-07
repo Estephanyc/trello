@@ -1,7 +1,8 @@
 createObjectList = (name)=>{
   let list = {
     name: name,
-    cards: []
+    cards: [],
+    cardsCounter: 0
   };
   return list;
 };

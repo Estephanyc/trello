@@ -1,101 +1,132 @@
 // boton inicial de crear lista
-columnList = (idContainer) =>{
-  createAddTaskInicial = (containerTaskInicial) =>{
-    const container = document.getElementById(containerTaskInicial);
-    const addText = document.createTextNode('+ Añadir una lista');
-    const parrafo = document.createElement('p');
-    parrafo.appendChild(addText);
-    container.appendChild(parrafo);
-    parrafo.classList.add('addInput');
-    parrafo.setAttribute('id', 'addListInicial');  
+let counter = 0;
+createAddTaskInicial = (containerTaskInicial) =>{
+  counter ++;
+  const container = document.getElementById('listsContainer');
+  const newDivList = document.createElement('div');
+  let newId = 'listContainer' + counter;
+  newDivList.setAttribute('id', newId);
+  newDivList.classList.add("col-md-3");
+  newDivList.classList.add("col-12")
+  newDivList.classList.add("div-list")
+  
+  container.appendChild(newDivList);
 
-    return container;
+  const addText = document.createTextNode('+ Añadir una lista');
+  const parrafo = document.createElement('p');
+  parrafo.appendChild(addText);
+  newDivList.appendChild(parrafo);
+  parrafo.classList.add('addInput');
+  parrafo.onclick = () => {
+    controlerAddListInput(newId);
+  }; 
+  return container;
+};
+
+// input para crear nueva lista
+createAddListInput = (Container) =>{
+  console.log(Container)
+  document.getElementById(Container).innerHTML = '';
+  const container = document.getElementById(Container);
+  const newDiv = document.createElement('div');
+  newDiv.classList.add('boxList');
+  container.appendChild(newDiv);
+  newDiv.classList.add('boxList');
+
+  let formId = 'form' + Container
+
+  const newInput = document.createElement('input');
+  newInput.classList.add('form-control');
+  newInput.setAttribute('id', 'inputAddNewList');
+
+  const newDivForm = document.createElement('div');
+  const newButtom = document.createElement('button');
+  const textButton = 'Añadir lista';
+  const textButtonNode = document.createTextNode(textButton);
+  newButtom.classList.add('btn', 'btn-primary', 'mb-2');
+  newButtom.setAttribute('id', 'buttonAddNewList'); 
+  newButtom.onclick = () => {
+    controlerCreateNewList(Container)
   };
 
-  // input para crear nueva lista
-  createAddListInput = (containerInputNewList) =>{
-    const container = document.getElementById(containerInputNewList);
-    const newDiv = document.createElement('div');
-    newDiv.classList.add('boxList');
-    container.appendChild(newDiv);
-    newDiv.classList.add('boxList');
+  const trash = document.createElement('i');
+  trash.classList.add('fas', 'fa-times');
+  let trashId = 'trashAddListInput' + Container
+  trash.setAttribute('id', trashId); 
 
-    const newInput = document.createElement('input');
-    newInput.classList.add('form-control');
-    newInput.setAttribute('id', 'inputAddNewList');
+  newButtom.appendChild(textButtonNode);
+  newDiv.appendChild(newDivForm)
+  newDivForm.appendChild(newInput);
+  newDivForm.appendChild(newButtom);
+  newDiv.appendChild(trash);
+  container.appendChild(newDiv);
+};
+// crear la nueva lista
+addNewList = (list,container)=>{
+  document.getElementById(container).innerHTML = '';
+  const contain = document.getElementById(container)
+  const newDiv = document.createElement('div');
+  newDiv.classList.add('boxList');
+  let newId = 'box' + counter;
+  newDiv.setAttribute('id', newId);
+  const cardsContainer = document.createElement('div');
+  let cardsContainerId = 'cards' + container
+  cardsContainer.setAttribute('id', cardsContainerId);
 
-    const newButtom = document.createElement('button');
-    const textButton = 'Añadir lista';
-    const textButtonNode = document.createTextNode(textButton);
-    newButtom.classList.add('btn', 'btn-primary', 'mb-2');
-    newButtom.setAttribute('id', 'buttonAddNewList'); 
+  const listTittle = document.createElement('h5');
+  const listTittleText = document.createTextNode(list.name);
+  listTittle.appendChild(listTittleText);
 
-    const trash = document.createElement('i');
-    trash.classList.add('fas', 'fa-times');
-    trash.setAttribute('id', 'trashAddListInput'); 
+  newDiv.appendChild(listTittle);
+  contain.appendChild(newDiv);
+  newDiv.appendChild(cardsContainer);
 
-    newButtom.appendChild(textButtonNode);
-    newDiv.appendChild(newInput);
-    newDiv.appendChild(newButtom);
-    newDiv.appendChild(trash);
-    container.appendChild(newDiv);
+  const addCardText = document.createTextNode('+ Añada una targeta');
+  const addCard = document.createElement('p');
+  addCard.appendChild(addCardText);
+  newDiv.appendChild(addCard);
+  let addCardId = 'addCardId' + container
+  addCard.setAttribute('id', addCardId);
+  addCard.onclick = ()=>{
+    console.log(list);
+    createCardInput(list, newId);
   };
-  // crear la nueva lista
-  addNewList = (name)=>{
-    const container = document.getElementById(idContainer);
-    const newDiv = document.createElement('div');
-    newDiv.classList.add('boxList');
-    newDiv.setAttribute('id', 'boxListId');
+};
+// input para crear el nombre de la targeta
+createCardInput = (list, container) =>{
+  //container.removeChild('addCardID' + container);
+  const contain = document.getElementById(container)
+  console.log(container)
+  const newInput = document.createElement('textarea');
+  newInput.classList.add('form-control');
+  newInput.setAttribute('placeholder', 'Introduzca un titulo para esta targeta');
+  let inputId = 'input' + container
+  newInput.setAttribute('id', inputId);
 
-    const cardsContainer = document.createElement('div');
-    cardsContainer.setAttribute('id', 'cardsContainer');
-
-    const listTittle = document.createElement('h5');
-    const listTittleText = document.createTextNode(name);
-    listTittle.appendChild(listTittleText);
-
-    newDiv.appendChild(listTittle);
-    container.appendChild(newDiv);
-    newDiv.appendChild(cardsContainer);
+  const newButtom = document.createElement('button');
+  newButtom.classList.add('btn', 'btn-primary', 'mb-2');
+  newButtom.setAttribute('id', 'addCardButtonId');
+  newButtom.onclick = () => {
+    controlerCreateCard(list, container);
   };
-  // boton para agregar nuevas targetas en la lista
-  addCardButton = ()=>{
-    let container = document.getElementById('boxListId');
-    const addCardText = document.createTextNode('+ Añada una targeta');
-    const addCard = document.createElement('p');
-    addCard.appendChild(addCardText);
-    container.appendChild(addCard);
-    addCard.setAttribute('id', 'addCardID');
-  };
-  // input para crear el nombre de la targeta
-  createCardInput = () =>{
-    let container = document.getElementById('boxListId');
-    const newInput = document.createElement('textarea');
-    newInput.classList.add('form-control');
-    newInput.setAttribute('placeholder', 'Introduzca un titulo para esta targeta');
-    newInput.setAttribute('id', 'inputAddNewCard');
+  const textButton = 'Añadir targeta';
+  const textButtonNode = document.createTextNode(textButton);
 
-    const newButtom = document.createElement('button');
-    newButtom.classList.add('btn', 'btn-primary', 'mb-2');
-    newButtom.setAttribute('id', 'addCardButtonId');
-
-    const textButton = 'Añadir lista';
-    const textButtonNode = document.createTextNode(textButton);
-
-    newButtom.appendChild(textButtonNode);
-    container.appendChild(newInput);
-    container.appendChild(newButtom);
-  };
-  // crear la targeta
-  createCard = (name) =>{
-    let container = document.getElementById('cardsContainer');
-    const cardText = document.createTextNode(name);
-    const cardTittle = document.createElement('p');
-    cardTittle.classList.add('card');
-    cardTittle.appendChild(cardText);
-    container.appendChild(cardTittle);
-  };
-  clearContainer = (idContainer) => {
-    document.getElementById(idContainer).innerHTML = '';
-  };
+  newButtom.appendChild(textButtonNode);
+  contain.appendChild(newInput);
+  contain.appendChild(newButtom);
+};
+// crear la targeta
+createCard = (name,container) =>{
+  
+  cardsCounter++;
+  let contain  = document.getElementById(container);
+  const cardText = document.createTextNode(name);
+  const cardTittle = document.createElement('p');
+  cardTittle.classList.add('card');
+  cardTittle.appendChild(cardText);
+  contain.appendChild(cardTittle);
+};
+clearContainer = () => {
+  document.getElementById(idContainer).innerHTML = '';
 };

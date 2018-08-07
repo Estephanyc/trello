@@ -197,6 +197,10 @@ header {
     font-size: .9rem;
 }
 
+.div-list {
+    float: left;
+}
+
 @media (max-width: 1200px) {
     .tableros {
         display: none;
