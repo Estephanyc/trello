@@ -1,5 +1,5 @@
 ## Trello
-Este proyecto es una replica del sitio trello.com, permite:
+Este proyecto es una réplica del sitio trello.com, permite:
 - Agregar lista de tareas
 - Agregar tareas en una lista
 
